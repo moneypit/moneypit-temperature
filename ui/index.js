@@ -1,9 +1,10 @@
 new Vue({
-  el: '#mp-fan-controller',
+  el: '#mp-temperature',
   data: {
     device: '',
     location: '',
-    temps: [],
+    rack_supply_temp_F: '',
+    rack_exhaust_temp_F: '',
     temp_last_updated: ''
   },
 
@@ -18,12 +19,9 @@ new Vue({
 
     axios.get('./api/temperature')
     .then(function (response) {
-      // need to loop
-      .forEach(function (temp) {
-
-      })
-      vm.temps = response.data.temperature;
-      vm.temp_last_updated = response.data.timestamp;
+      vm.rack_supply_temp_F = Math.round(response['data']['rack-supply']['temperatureF'] * 100) / 100;
+      vm.rack_exhaust_temp_F = Math.round(response['data']['rack-exhaust']['temperatureF'] * 100) / 100;
+      vm.temp_last_updated = response['data']['timestamp'];
     })
 
 

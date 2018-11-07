@@ -12,7 +12,7 @@
 
     <body>
 
-        <div id="mp-fan-controller">
+        <div id="mp-temperature">
           <div class="container">
 
             <br />
@@ -26,11 +26,21 @@
                 </div>
               </div>
 
-              <div class="row" v-for="temp in temps">
+              <div class="row">
                <div class="col-md-12">
                  <div class="card-counter info">
-                   <span class="count-numbers">{{temperature}}</span>
-                   <span class="count-name">{{temperature.name}} TEMP</span>
+                   <span class="count-numbers">{{rack_supply_temp_F}}</span>
+                   <span class="count-name">SUPPLY TEMP (F)</span>
+                   <span class="count-lastupdated">last updated {{temp_last_updated}}</span>
+                 </div>
+                </div>
+              </div>
+
+              <div class="row">
+               <div class="col-md-12">
+                 <div class="card-counter info">
+                   <span class="count-numbers">{{rack_exhaust_temp_F}}</span>
+                   <span class="count-name">EXHAUST TEMP (F)</span>
                    <span class="count-lastupdated">last updated {{temp_last_updated}}</span>
                  </div>
                 </div>

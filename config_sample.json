@@ -15,12 +15,12 @@
     {
       "name": "rack-supply",
       "sensor": 22,
-      "pin": "4"
+      "pin": "5"
     },
     {
       "name": "rack-exhaust",
       "sensor": 22,
-      "pin": "5"
+      "pin": "6"
     }
   ]
 }

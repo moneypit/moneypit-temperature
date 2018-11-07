@@ -4,7 +4,7 @@ require __DIR__.'/../vendor/autoload.php';
 use Elasticsearch\ClientBuilder;
 
 // Load config
-$config = json_decode(file_get_contents(__DIR__."/../config.json"),TRUE);
+$config = json_decode(file_get_contents($argv[1]),TRUE);
 
 // Create Elasticsearch client
 $esClient = ClientBuilder::create()->setHosts($config['elasticsearch']['hosts'])->build();

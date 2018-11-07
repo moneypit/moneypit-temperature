@@ -6,6 +6,8 @@ Used to monitor temperature on supply / exhaust side of miner racks.
 
 ## Dependencies
 
+> Recommend running `sudo apt-get update` if running into issues installing dependencies
+
 - Git
    `sudo apt-get install git`
 
@@ -30,7 +32,7 @@ Used to monitor temperature on supply / exhaust side of miner racks.
 
 - A remote `elasticsearch` to post stats to
 
-> Recommend running `sudo apt-get update` if running into issues installing dependencies
+
 
 ## Install
 
@@ -108,7 +110,7 @@ Used to monitor temperature on supply / exhaust side of miner racks.
 
 ```
 
-- From within the `./moneypit-fan-controller-folder` install PHP / Node dependencies
+- From within the `./moneypit-temperature` folder install PHP / Node dependencies
 
   ```
   wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
@@ -120,8 +122,8 @@ Used to monitor temperature on supply / exhaust side of miner racks.
 
 ```
 
-* * * * * python /home/pi/moneypit-fan-controller/scripts/fetch_temp.py /home/pi/moneypit-temperature/config.json
-* * * * * php /home/pi/moneypit-temperature/scripts/post_stats.php
+* * * * * python /home/pi/moneypit-temperature/scripts/fetch_temp.py /home/pi/moneypit-temperature/config.json
+* * * * * php /home/pi/moneypit-temperature/scripts/post_stats.php /home/pi/moneypit-temperature/config.json
 
 ```
 

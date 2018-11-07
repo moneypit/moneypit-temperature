@@ -26,7 +26,9 @@ for i, temp_sensor in enumerate(temp_sensors):
     temperatureObject[sensor_name] = {}
 
     temperatureObject[sensor_name]['humidity'], temperatureObject[sensor_name]['temperatureC'] = Adafruit_DHT.read_retry(sensor, pin)
-    temperatureObject[sensor_name]['temperatureF'] = (temperatureObject['temperatureC'] * 1.8) + 32
+    temperatureObject[sensor_name]['temperatureF'] = (temperatureObject[sensor_name]['temperatureC'] * 1.8) + 32
 
+
+print temperatureObject
 rClient.set('temperature',json.dumps(temperatureObject))
 rClient.save()
